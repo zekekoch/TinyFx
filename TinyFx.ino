@@ -268,7 +268,7 @@ void twoColorsAll() {                  //-m8-POLICE LIGHTS (TWO COLOR SOLID)
   if (idex >= LED_COUNT) {idex = 0;}
   int idexR = idex;
   int idexB = antipodal_index(idexR);
-  LEDS.setPixelColor(idexR, 255, 0, 0);
+  LEDS.setPixelColor(idexR, 255, 0, 255);
   LEDS.setPixelColor(idexB, 0, 0, 255);
 }
 
@@ -309,8 +309,8 @@ void threeColorsAll() { //-red, white and blue
     int idexR = idex;
     int idexW = nextThird(idexR);
     int idexB = nextThird(idexW);
-    LEDS.setPixelColor(idexR, 255, 0, 0);
-    LEDS.setPixelColor(idexW, 255, 255, 255);
+    LEDS.setPixelColor(idexR, 255, 0, 255);
+    LEDS.setPixelColor(idexW, 0, 255, 0);
     LEDS.setPixelColor(idexB, 0, 0, 255);
 }
 
@@ -451,7 +451,7 @@ void new_rainbow_loop(int idelay){                       //-m88-RAINBOW FADE FRO
 void demo_mode(){
   for(int i = 0;i<500;i++)
   {
-    threeColors();
+    twoColors();
     LEDS.show();
     delay(20);
   }
@@ -463,11 +463,11 @@ void demo_mode(){
   }
   for(int i = 0;i<500;i++)
   {
-    twoColors();
+    threeColors();
     LEDS.show();
-    delay(20);
+    delay(25);
   }
-    for(int i = 0;i<500;i++)
+  for(int i = 0;i<500;i++)
   {
     twoColorsAll();
     LEDS.show();
